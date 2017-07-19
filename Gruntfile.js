@@ -13,13 +13,13 @@ module.exports = function(grunt) {
       }
     },
 
-    imagemin: {
-    	dynamic: {
-        	files: [{
-            	expand: true,
-            	cwd: 'images/',
-           		src: ['**/*.{png,jpg,gif}'],
-            	dest: 'images/build/'
+  imagemin: {
+   	dynamic: {
+       	files: [{
+           	expand: true,
+           	cwd: 'images/',
+         		src: ['**/*.{png,jpg,gif}'],
+           	dest: 'images/build/'
         	}]
     	}
 	},
@@ -41,5 +41,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ["sass"]);
+  grunt.registerTask('default', ["sass", "imagemin", "watch"]);
 };
